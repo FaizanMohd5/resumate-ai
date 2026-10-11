@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Resumate</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+  <header><div class="brand">Resumate <small>resume editor</small></div><label class="upload">Upload .docx<input id="file" type="file" accept=".docx"></label><label>Owner <select id="owner"><option value="me">me</option><option value="friend">friend</option></select></label><input id="title" aria-label="Resume title" placeholder="Resume title" readonly><button id="download" disabled>Download .docx</button></header>
+  <main>
+    <div id="empty" class="empty">Upload a Word resume to begin. Your parsed source stays on the left; the rendered resume stays on the right.</div>
+    <section id="workspace" hidden>
+      <div class="pane"><h2>Parsed source <small>read-only</small></h2><pre id="source"></pre></div>
+      <div class="pane preview-pane"><h2>Live preview</h2><div id="preview"></div></div>
+    </section>
+  </main>
+  <footer><textarea id="instruction" placeholder="Describe an edit, e.g. Add a bullet under Experience saying 'Managed site surveys for 3 residential projects'" disabled></textarea><div class="actions"><button id="edit" disabled>Preview changes</button><button id="revert" disabled>Revert last edit</button><span id="status" role="status"></span></div><p>Preview changes are saved immediately for this MVP. Revert restores the last saved snapshot.</p></footer>
+  <script src="/static/app.js"></script>
+</body></html>
